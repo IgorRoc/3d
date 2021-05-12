@@ -1,5 +1,5 @@
 let speed = 0.7
-let zoom = 70
+let zoom = 60
 let shadow = true
 let neon = false
 let hidden = false
