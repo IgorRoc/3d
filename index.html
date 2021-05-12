@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./unknown.png" type="image/x-icon">
+
     <title>3D</title>
 
     <link rel="stylesheet" href="index.css">
@@ -17,23 +19,33 @@
         </div>
         <div id="zoo">
             <span onclick="changeZoom(-5)">-</span>
-            <h1>Zoom: 70px</h1>
+            <h1>Zoom: 60px</h1>
             <span onclick="changeZoom(+5)">+</span>
+        </div>
+        <div id="rtx">
+            <span></span>
+            <h1>RTX: ON</h1>
+            <span onclick="toggleRTX()">TURN</span>
+        </div>
+        <div id="neo">
+            <span></span>
+            <h1>Neon: OFF</h1>
+            <span onclick="toggleNeon()">TURN</span>
         </div>
     </header>
     <div id="scene" class="scene">
-        <div class="floor"></div>
-        <div class="cube">
-            <div class="front"></div>
-            <div class="back"></div>
-            <div class="left"></div>
-            <div class="right"></div>
-            <div class="top">
-                <div class="ballShadow"></div>
+        <div id="chao" class="floor floor-light"></div>
+        <div id="cubo" class="cube">
+            <div class="front side-shadow"></div>
+            <div class="back side-shadow"></div>
+            <div class="left side-shadow"></div>
+            <div class="right side-shadow"></div>
+            <div class="top side-shadow">
+                <div id="sombra-bola" class="ballShadow"></div>
             </div>
-            <div class="bottom"></div>
+            <div class="bottom bottom-shadow"></div>
         </div>
-        <div class="ball"></div>
+        <div id="bola" class="ball ball-light"></div>
     </div>
 
     <script src="./script.js"></script>

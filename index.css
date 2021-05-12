@@ -2,11 +2,11 @@
 
 
 :root{
-    --boxColor: #5577;
+    --boxColor: rgba(59, 59, 165, 0.467);
     --ballColor: #1a27;
     --ballBounce: .7s;
     --rotateSpeed: 20s;
-    --fontSize: 70px;
+    --fontSize: 60px;
 }
 
 body{
@@ -29,21 +29,17 @@ header{
     background-color: #000a;
     backdrop-filter: blur(20px);
     width:100%;
+    max-width: 1400px;
     position: absolute;
     top: 0;
     z-index: 10;
     text-align: center;
-}
-
-h1{
-    color: var(--ballColor);
-    font-size: 50px;
-    line-height: 50px;
-    margin: 0;
-    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 header div{
+    width: 33%;
     display: flex;
     justify-content:center;
     align-items: center;
@@ -55,6 +51,14 @@ header div span{
     padding: 0 10px;
     margin: 0 70px;
     cursor: pointer;
+}
+
+header div h1{
+    width: 50%;
+    color: var(--ballColor);
+    font-size: 30px;
+    line-height: 50px;
+    margin: 0;
 }
 
 .scene{
@@ -74,7 +78,15 @@ header div span{
     width: 15em;
     height: 15em;
     background-image: 
-        radial-gradient(#0000, #000 75%),
+        repeating-conic-gradient(
+            from 45deg, 
+            #111 0deg 90deg, #222 90deg 180deg);
+    background-size: 1em 1em;
+}
+
+.floor-light{
+    background-image:
+        radial-gradient(#0000, #000 55%),
         repeating-conic-gradient(
             from 45deg, 
             #111 0deg 90deg, #222 90deg 180deg);
@@ -92,14 +104,18 @@ header div span{
     left: -.5em;
     bottom: 1em;
 
-    background-image: radial-gradient(
-        circle at top,
-        var(--ballColor), #000
-    );
+    background-color: var(--ballColor);
     
     animation: 
         rotateScene var(--rotateSpeed) linear infinite reverse,
         ballBounce var(--ballBounce) ease-out infinite;
+}
+
+.ball-light{
+    background-image: radial-gradient(
+        circle at top,
+        var(--ballColor), #000
+    );
 }
 
 .ballShadow{
@@ -128,8 +144,6 @@ header div span{
     width: 100%;
     height: 100%;
     background-color: var(--boxColor);
-
-    box-shadow: 0 0 .5em #000a inset;
 }
 
 .front{
@@ -154,7 +168,6 @@ header div span{
     height: 2em;
     background-color: var(--boxColor);
     transform: translateY(-50%) rotateX(90deg);
-    box-shadow: 0 0 .5em #000a inset;
 }
 
 .bottom{
@@ -164,7 +177,36 @@ header div span{
     background-color: #000a;
     bottom: 0;
     transform: translateY(50%) rotateX(90deg);
-    box-shadow: 0 0 .5em #000a;
+}
+
+.side-shadow{
+    box-shadow: 0 0 .5em #000a inset;
+}
+
+.bottom-shadow{
+    box-shadow: 0 0 1em #000d;
+}
+
+.cube-neon{
+    background-image: radial-gradient(
+        #b121f3, #831cb3
+    );
+    box-shadow: 0 0 15px #b121f37a,
+                0 0 50px #b121f37a,
+                0 0 100px #b121f37a,
+                0 0 200px #b121f37a;
+}
+
+
+.ball-neon{
+    background-image: radial-gradient(
+        circle at top,
+        var(--ballColor), #0005
+    );
+    box-shadow: 0 0 15px var(--ballColor),
+                0 0 50px var(--ballColor),
+                0 0 100px var(--ballColor),
+                0 0 200px var(--ballColor)
 }
 
 @keyframes rotateScene {
