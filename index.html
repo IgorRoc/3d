@@ -9,10 +9,33 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div class="scene">
+    <header>
+        <div id="vel">
+            <span onclick="changeSpeed(-0.05)">-</span>
+            <h1>Velocidade: 0.70s</h1>
+            <span onclick="changeSpeed(+0.05)">+</span>
+        </div>
+        <div id="zoo">
+            <span onclick="changeZoom(-5)">-</span>
+            <h1>Zoom: 70px</h1>
+            <span onclick="changeZoom(+5)">+</span>
+        </div>
+    </header>
+    <div id="scene" class="scene">
         <div class="floor"></div>
-        <div class="cube"></div>
+        <div class="cube">
+            <div class="front"></div>
+            <div class="back"></div>
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top">
+                <div class="ballShadow"></div>
+            </div>
+            <div class="bottom"></div>
+        </div>
         <div class="ball"></div>
     </div>
+
+    <script src="./script.js"></script>
 </body>
 </html>
