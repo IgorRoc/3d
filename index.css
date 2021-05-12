@@ -4,6 +4,8 @@
 :root{
     --boxColor: rgba(59, 59, 165, 0.467);
     --ballColor: #1a27;
+    --boxColor-dark: rgba(16, 16, 92, 0.205);
+    --ballColor-dark: rgba(2, 56, 8, 0.575);
     --ballBounce: .7s;
     --rotateSpeed: 20s;
     --fontSize: 60px;
@@ -180,7 +182,7 @@ header div h1{
 }
 
 .side-shadow{
-    box-shadow: 0 0 .5em #000a inset;
+    box-shadow: 0 0 .5em #0006 inset;
 }
 
 .bottom-shadow{
@@ -189,19 +191,19 @@ header div h1{
 
 .cube-neon{
     background-image: radial-gradient(
-        #b121f3, #831cb3
+        var(--boxColor), var(--boxColor-dark)
     );
-    box-shadow: 0 0 15px #b121f37a,
-                0 0 50px #b121f37a,
-                0 0 100px #b121f37a,
-                0 0 200px #b121f37a;
+    box-shadow: 0 0 15px var(--boxColor),
+                0 0 50px var(--boxColor),
+                0 0 100px var(--boxColor),
+                0 0 200px var(--boxColor);
 }
 
 
 .ball-neon{
     background-image: radial-gradient(
         circle at top,
-        var(--ballColor), #0005
+        var(--ballColor), var(--ballColor-dark)
     );
     box-shadow: 0 0 15px var(--ballColor),
                 0 0 50px var(--ballColor),
