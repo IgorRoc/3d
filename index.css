@@ -28,20 +28,19 @@ body{
 
 header{
     padding: 20px 0;
-    background-color: #000a;
+    background-color: rgba(20, 20, 20, 0.667);
     backdrop-filter: blur(20px);
     width:100%;
-    max-width: 1400px;
     position: absolute;
-    top: 0;
+    bottom: 0;
     z-index: 10;
     text-align: center;
     display: flex;
     flex-wrap: wrap;
+    transition: .3s ease;
 }
 
 header div{
-    width: 33%;
     display: flex;
     justify-content:center;
     align-items: center;
@@ -61,6 +60,25 @@ header div h1{
     font-size: 30px;
     line-height: 50px;
     margin: 0;
+}
+
+.btn-menu{
+    position: absolute;
+    background:none;
+    width: 30px;
+    height: 30px;
+    top: -50px;
+    left: 50px;
+    background-color: rgba(20, 20, 20, 0.667);
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px 10px 0 0;
+    transition: .3s ease;
+}
+
+.btn-menu img{
+    width: 100%;
+    height: 100%;
 }
 
 .scene{
@@ -211,6 +229,12 @@ header div h1{
                 0 0 200px var(--ballColor)
 }
 
+
+
+
+.invert{
+    filter: invert(1);
+}
 @keyframes rotateScene {
     to{
         transform: rotateY(360deg)

@@ -2,6 +2,8 @@ let speed = 0.7
 let zoom = 70
 let shadow = true
 let neon = false
+let hidden = false
+
 const vel = document.getElementById('vel').children[1]
 const zoo = document.getElementById('zoo').children[1]
 const rtx = document.getElementById('rtx').children[1]
@@ -63,4 +65,14 @@ function toggleNeon() {
 
 
     neo.innerText = `Neon: ${neon?"ON":"OFF"}`
+}
+
+function toggleMenu(){
+    hidden = !hidden
+
+    let header = document.getElementById("menu")
+    header.style.transform = `translateY(${hidden?header.offsetHeight:0}px)`
+
+    let btn_menu = document.getElementById('btn-menu')
+    btn_menu.classList.toggle("invert")
 }
