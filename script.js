@@ -1,11 +1,13 @@
 let speed = 0.7
 let zoom = 60
+let height = 3
 let shadow = true
 let neon = false
 let hidden = false
 
 const vel = document.getElementById('vel').children[1]
 const zoo = document.getElementById('zoo').children[1]
+const alt = document.getElementById('alt').children[1]
 const rtx = document.getElementById('rtx').children[1]
 const neo = document.getElementById('neo').children[1]
 
@@ -25,6 +27,15 @@ function changeZoom(value) {
 
     document.documentElement.style.setProperty('--fontSize', `${zoom}px`);
     zoo.innerText = `Zoom: ${zoom}px`
+}
+
+function changeHeight(value) {
+    height += value;
+
+    height = Math.min(Math.max(-20, height), 20);
+
+    document.documentElement.style.setProperty('--cameraHeight', `${height}em`);
+    alt.innerText = `Perspectiva: ${height.toFixed(2)}em`
 }
 
 function toggleRTX() {
