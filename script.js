@@ -46,15 +46,15 @@ function toggleRTX() {
 
     let bola = document.getElementById('bola')
     bola.classList.toggle('ball-light')
-    
+
     let sombra_bola = document.getElementById('sombra-bola')
     sombra_bola.classList.toggle('ballShadow')
 
     let cubo = document.getElementById('cubo')
     for (const face of cubo.children) {
-        if(face.classList.contains("bottom")){
+        if (face.classList.contains("bottom")) {
             face.classList.toggle("bottom-shadow")
-        }else{
+        } else {
             face.classList.toggle("side-shadow")
         }
     }
@@ -68,7 +68,7 @@ function toggleNeon() {
 
     let bola = document.getElementById('bola')
     bola.classList.toggle('ball-neon')
-    
+
     let cubo = document.getElementById('cubo')
     for (const face of cubo.children) {
         face.classList.toggle("cube-neon")
@@ -78,7 +78,7 @@ function toggleNeon() {
     neo.innerText = `Neon: ${neon?"ON":"OFF"}`
 }
 
-function toggleMenu(){
+function toggleMenu() {
     hidden = !hidden
 
     let header = document.getElementById("menu")
@@ -88,23 +88,23 @@ function toggleMenu(){
     btn_menu.classList.toggle("invert")
 }
 
-function changeColor(id){
+function changeColor(id) {
     let obj = document.getElementById(id)
 
-    if(obj.classList.contains("filter-red")){
+    if (obj.classList.contains("filter-red")) {
         obj.classList.remove("filter-red")
         obj.classList.add("filter-green")
-    }else if(obj.classList.contains("filter-green")){
+    } else if (obj.classList.contains("filter-green")) {
         obj.classList.remove("filter-green")
         obj.classList.add("filter-yellow")
-    }else if(obj.classList.contains("filter-yellow")){
+    } else if (obj.classList.contains("filter-yellow")) {
         obj.classList.remove("filter-yellow")
         obj.classList.add("filter-blue")
-    }else if(obj.classList.contains("filter-blue")){
+    } else if (obj.classList.contains("filter-blue")) {
         obj.classList.remove("filter-blue")
-    }else{
+    } else {
         obj.classList.add("filter-red")
     }
 
-    
+
 }

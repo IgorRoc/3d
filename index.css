@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
-:root{
+:root {
     --boxColor: rgba(59, 59, 165, 0.467);
     --ballColor: #1a27;
     --boxColor-dark: rgba(16, 16, 92, 0.205);
@@ -12,26 +12,26 @@
     --cameraHeight: 3em;
 }
 
-body{
+body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     background-color: #000;
     min-height: 100vh;
     display: flex;
     overflow: hidden;
-    justify-content:center;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
     font-size: var(--fontSize);
 
     perspective: 10em;
     perspective-origin: 50% calc(50% - var(--cameraHeight));
 }
 
-header{
+header {
     padding: 20px 0;
     background-color: rgba(20, 20, 20, 0.667);
     backdrop-filter: blur(20px);
-    width:100%;
+    width: 100%;
     position: absolute;
     bottom: 0;
     z-index: 10;
@@ -41,21 +41,21 @@ header{
     transition: .3s ease;
 }
 
-header div{
+header div {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
 }
 
-header div span{
-    background-color:rgb(255, 255, 255);
+header div span {
+    background-color: rgb(255, 255, 255);
     font-size: 30px;
     padding: 0 10px;
     margin: 0 70px;
     cursor: pointer;
 }
 
-header div h1{
+header div h1 {
     width: 50%;
     color: var(--ballColor);
     font-size: 30px;
@@ -63,9 +63,9 @@ header div h1{
     margin: 0;
 }
 
-.btn-menu{
+.btn-menu {
     position: absolute;
-    background:none;
+    background: none;
     width: 30px;
     height: 30px;
     top: -50px;
@@ -77,48 +77,45 @@ header div h1{
     transition: .3s ease;
 }
 
-.btn-menu img{
+.btn-menu img {
     width: 100%;
     height: 100%;
 }
 
-.scene{
+.scene {
     position: relative;
     transform-style: preserve-3d;
 
     animation: rotateScene var(--rotateSpeed) linear infinite;
 }
 
-.floor{
+.floor {
     position: absolute;
     transform-style: preserve-3d;
     top: 1em;
-    transform: 
-        translate(-50%, -50%)
-        rotateX(90deg);
+    transform:
+        translate(-50%, -50%) rotateX(90deg);
     width: 15em;
     height: 15em;
-    background-image: 
-        repeating-conic-gradient(
-            from 45deg, 
+    background-image:
+        repeating-conic-gradient(from 45deg,
             #111 0deg 90deg, #222 90deg 180deg);
     background-size: 1em 1em;
 }
 
-.floor-light{
+.floor-light {
     background-image:
         radial-gradient(#0000, #000 65%),
-        repeating-conic-gradient(
-            from 45deg, 
+        repeating-conic-gradient(from 45deg,
             #111 0deg 90deg, #222 90deg 180deg);
-    background-size: 100%,  1em 1em;
+    background-size: 100%, 1em 1em;
 }
 
-.ball{
+.ball {
     transform-style: preserve-3d;
     width: 1em;
     height: 1em;
-    border-radius:50%;
+    border-radius: 50%;
     background-color: var(--ballColor);
 
     position: absolute;
@@ -126,20 +123,18 @@ header div h1{
     bottom: 1em;
 
     background-color: var(--ballColor);
-    
-    animation: 
+
+    animation:
         rotateScene var(--rotateSpeed) linear infinite reverse,
         ballBounce var(--ballBounce) ease-out infinite;
 }
 
-.ball-light{
-    background-image: radial-gradient(
-        circle at top,
-        var(--ballColor), #000
-    );
+.ball-light {
+    background-image: radial-gradient(circle at top,
+            var(--ballColor), #000);
 }
 
-.ballShadow{
+.ballShadow {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -148,11 +143,11 @@ header div h1{
     animation: scaleShadow var(--ballBounce) ease-out infinite;
 }
 
-.cube{
+.cube {
     transform-style: preserve-3d;
     width: 2em;
     height: 2em;
-    
+
     position: absolute;
     bottom: -1em;
     left: -1em;
@@ -160,30 +155,33 @@ header div h1{
     animation: cubeBounce var(--ballBounce) ease-out infinite;
 }
 
-.front, .back, .left, .right{
+.front,
+.back,
+.left,
+.right {
     position: absolute;
     width: 100%;
     height: 100%;
     background-color: var(--boxColor);
 }
 
-.front{
+.front {
     transform: translateZ(1em);
 }
 
-.left{
+.left {
     transform: rotateY(90deg) translateZ(1em);
 }
 
-.back{
+.back {
     transform: rotateY(180deg) translateZ(1em);
 }
 
-.right{
+.right {
     transform: rotateY(270deg) translateZ(1em);
 }
 
-.top{
+.top {
     position: absolute;
     width: 2em;
     height: 2em;
@@ -191,7 +189,7 @@ header div h1{
     transform: translateY(-50%) rotateX(90deg);
 }
 
-.bottom{
+.bottom {
     position: absolute;
     width: 2em;
     height: 2em;
@@ -200,40 +198,36 @@ header div h1{
     transform: translateY(50%) rotateX(90deg);
 }
 
-.side-shadow{
+.side-shadow {
     box-shadow: 0 0 .5em #0006 inset;
 }
 
-.bottom-shadow{
+.bottom-shadow {
     box-shadow: 0 0 1em #000d;
 }
 
-.cube-neon{
-    background-image: radial-gradient(
-        var(--boxColor), var(--boxColor-dark)
-    );
+.cube-neon {
+    background-image: radial-gradient(var(--boxColor), var(--boxColor-dark));
     box-shadow: 0 0 15px var(--boxColor),
-                0 0 50px var(--boxColor),
-                0 0 100px var(--boxColor),
-                0 0 200px var(--boxColor);
+        0 0 50px var(--boxColor),
+        0 0 100px var(--boxColor),
+        0 0 200px var(--boxColor);
 }
 
 
-.ball-neon{
-    background-image: radial-gradient(
-        circle at top,
-        var(--ballColor), var(--ballColor-dark)
-    );
+.ball-neon {
+    background-image: radial-gradient(circle at top,
+            var(--ballColor), var(--ballColor-dark));
     box-shadow: 0 0 15px var(--ballColor),
-                0 0 50px var(--ballColor),
-                0 0 100px var(--ballColor),
-                0 0 200px var(--ballColor)
+        0 0 50px var(--ballColor),
+        0 0 100px var(--ballColor),
+        0 0 200px var(--ballColor)
 }
 
 
 
 
-.invert{
+.invert {
     filter: invert(1);
 }
 
@@ -254,27 +248,33 @@ header div h1{
 }
 
 @keyframes rotateScene {
-    to{
+    to {
         transform: rotateY(360deg)
     }
 }
 
 @keyframes ballBounce {
-    0%, 100%{
+
+    0%,
+    100% {
         bottom: .5em;
     }
-    50%{
+
+    50% {
         bottom: 3em;
         animation-timing-function: ease-in;
     }
 }
 
 @keyframes scaleShadow {
-    0%, 100%{
+
+    0%,
+    100% {
         transform: scale(1);
         opacity: 1;
     }
-    50%{
+
+    50% {
         transform: scale(2);
         opacity: .5;
         animation-timing-function: ease-in;
@@ -282,10 +282,14 @@ header div h1{
 }
 
 @keyframes cubeBounce {
-    0%, 100%{
+
+    0%,
+    100% {
         height: 1.5em;
     }
-    10%, 94%{
+
+    10%,
+    94% {
         height: 2em;
     }
 }
