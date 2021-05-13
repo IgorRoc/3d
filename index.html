@@ -40,18 +40,18 @@
         </div>
     </header>
     <div id="scene" class="scene">
-        <div id="chao" class="floor floor-light"></div>
+        <div id="chao" class="floor floor-light""></div>
         <div id="cubo" class="cube">
-            <div class="front side-shadow"></div>
-            <div class="back side-shadow"></div>
-            <div class="left side-shadow"></div>
-            <div class="right side-shadow"></div>
-            <div class="top side-shadow">
+            <div id="front" class="front side-shadow" onclick="changeColor('front')"></div>
+            <div id="back" class="back side-shadow" onclick="changeColor('back')"></div>
+            <div id="left" class="left side-shadow" onclick="changeColor('left')"></div>
+            <div id="right" class="right side-shadow" onclick="changeColor('right')"></div>
+            <div id="top" class="top side-shadow" onclick="changeColor('top')">
                 <div id="sombra-bola" class="ballShadow"></div>
             </div>
-            <div class="bottom bottom-shadow"></div>
+            <div id="bottom" class="bottom bottom-shadow" onclick="changeColor('bottom')"></div>
         </div>
-        <div id="bola" class="ball ball-light"></div>
+        <div id="bola" class="ball ball-light" onclick="changeColor('bola')"></div>
     </div>
 
     <script src="./script.js"></script>

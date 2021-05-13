@@ -87,3 +87,24 @@ function toggleMenu(){
     let btn_menu = document.getElementById('btn-menu')
     btn_menu.classList.toggle("invert")
 }
+
+function changeColor(id){
+    let obj = document.getElementById(id)
+
+    if(obj.classList.contains("filter-red")){
+        obj.classList.remove("filter-red")
+        obj.classList.add("filter-green")
+    }else if(obj.classList.contains("filter-green")){
+        obj.classList.remove("filter-green")
+        obj.classList.add("filter-yellow")
+    }else if(obj.classList.contains("filter-yellow")){
+        obj.classList.remove("filter-yellow")
+        obj.classList.add("filter-blue")
+    }else if(obj.classList.contains("filter-blue")){
+        obj.classList.remove("filter-blue")
+    }else{
+        obj.classList.add("filter-red")
+    }
+
+    
+}
