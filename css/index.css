@@ -27,6 +27,11 @@ body {
     perspective-origin: 50% calc(50% - var(--cameraHeight));
 }
 
+a{
+    font-size: .5em;
+    color: white;
+}
+
 header {
     padding: 20px 0;
     background-color: rgba(20, 20, 20, 0.667);
