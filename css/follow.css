@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "header.css";
+
+:root {
+    --boxColor: rgba(59, 59, 165, 0.467);
+    --ballColor: #1a27;
+    --boxColor-dark: rgba(16, 16, 92, 0.205);
+    --ballColor-dark: rgba(2, 56, 8, 0.575);
+    --floatSpeed: 1.5s;
+    --fontSize: 60px;
+    --cameraHeight: 3em;
+    --circleDistance: .7;
+    --circleLife: 5000ms;
+    --circleFinal: 10;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background-color: #000;
+    min-height: 100vh;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--fontSize);
+
+    perspective: 10em;
+    perspective-origin: 50% calc(50% - var(--cameraHeight));
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    font-size: .5em;
+    color: white;
+}
+
+.scene {
+    position: relative;
+    transform-style: preserve-3d;
+
+}
+
+.holder{
+    position: relative;
+    transform-style: preserve-3d;
+
+    transform: rotateX(90deg) translateZ(1em);
+}
+
+.wrapper{
+    position: absolute;
+}
+
+.circle{
+    position: absolute;
+    transform-style: preserve-3d;
+    width: 2em;
+    height: 2em;
+
+    transform: translate(-50%, -50%) translateZ(1em);
+
+    border: 3px solid white;
+    border-radius: 50%;
+    
+    animation: 
+        fly var(--circleLife) ease,
+        disappear var(--circleLife) ease;
+
+    transition: .3s
+}
+
+@keyframes fly{
+    from{
+        transform: translate(-50%, -50%) translateZ(0);
+    }
+    to{
+        transform: translate(-50%, -50%) translateZ(5em);
+    }
+}
+
+@keyframes disappear{
+    from{
+        width: 2em;
+        height: 2em;
+        opacity: 1;
+    }
+    to{
+        width: calc(2em * var(--circleFinal));
+        height: calc(2em * var(--circleFinal));
+        opacity: 0;
+    }
+}
