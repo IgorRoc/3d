@@ -9,7 +9,7 @@
     --floatSpeed: 1.5s;
     --fontSize: 60px;
     --cameraHeight: 3em;
-    --circleDistance: 1;
+    --circleDistance: .7;
 }
 
 body {
@@ -39,13 +39,15 @@ a{
 .scene {
     position: relative;
     transform-style: preserve-3d;
+
 }
 
 .holder{
-    position: absolute;
+    position: relative;
     transform-style: preserve-3d;
 
     transform: rotateX(90deg) translateZ(1em);
+
 }
 
 .circle{
@@ -55,7 +57,6 @@ a{
     height: calc(2em * var(--i)*var(--circleDistance));
 
     transform: translate(-50%, -50%) translateZ(1em);
-    /* transform-origin: 100% 100%; */
 
     border: 3px solid white;
     border-radius: 50%;
